@@ -26,7 +26,7 @@ export async function redirectToAuthCodeFlow(clientId) {
   const params = new URLSearchParams();
   params.append("client_id", clientId);
   params.append("response_type", "code");
-  params.append("redirect_uri", "http://127.0.0.1:5173/callback"); // Asegúrate que esté en tu dashboard
+  params.append("redirect_uri", "https://api-nine-ruby-43.vercel.app/"); // Asegúrate que esté en tu dashboard
   params.append("scope", "user-read-private user-read-email user-top-read");
   params.append("code_challenge_method", "S256");
   params.append("code_challenge", challenge);
