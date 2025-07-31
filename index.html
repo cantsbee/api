@@ -61,6 +61,8 @@
       <p>Imagen: <span id="imgUrl"></span></p>
       <section id="profile"></section>
 <section id="top-artists"></section>
+      <button onclick="SpotifyAPI.refreshData()">Actualizar datos</button>
+<button onclick="SpotifyAPI.search('reggaeton').then(data => console.log(data))">Buscar reggaeton</button>
 
     </main>
 
