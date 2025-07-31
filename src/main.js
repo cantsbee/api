@@ -121,7 +121,7 @@
 //   headers: { Authorization: `Bearer ${accessToken}` }
 // }).then(res => res.json()).then(data => console.log(data.items));
 
-const clientId = "your-client-id-here"; // Reemplaza con tu Client ID real
+const clientId = "6e4ca8910c3c479ea21b9de20ca7646c"; // Reemplaza con tu Client ID real
 const params = new URLSearchParams(window.location.search);
 const code = params.get("code");
 
@@ -178,7 +178,7 @@ async function spotifyRequest(endpoint, method = 'GET', token, body = null) {
 
 // 🌐 Redirección a Spotify login
 async function redirectToAuthCodeFlow(clientId) {
-  const redirectUri = 'http://localhost:5173'; // Ajusta según tu entorno
+  const redirectUri = 'https://api-nine-ruby-43.vercel.app/'; // Ajusta según tu entorno
   const scope = 'user-read-private user-top-read';
   const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${encodeURIComponent(scope)}`;
   window.location.href = authUrl;
@@ -186,7 +186,7 @@ async function redirectToAuthCodeFlow(clientId) {
 
 // 🔑 Obtener token de acceso
 async function getAccessToken(clientId, code) {
-  const redirectUri = 'http://localhost:5173'; // Igual que el usado arriba
+  const redirectUri = 'https://api-nine-ruby-43.vercel.app/'; // Igual que el usado arriba
   const body = new URLSearchParams({
     grant_type: 'authorization_code',
     code,
