@@ -112,3 +112,12 @@ function populateUI(profile) {
   document.getElementById("url").innerText = profile.href;
   document.getElementById("url").href = profile.href;
 }
+
+fetch('https://api.spotify.com/v1/me/top/artists?limit=10&time_range=short_term', {
+  headers: { Authorization: `Bearer ${accessToken}` }
+}).then(res => res.json()).then(data => console.log(data.items));
+
+fetch('https://api.spotify.com/v1/me/top/tracks?limit=10', {
+  headers: { Authorization: `Bearer ${accessToken}` }
+}).then(res => res.json()).then(data => console.log(data.items));
+
